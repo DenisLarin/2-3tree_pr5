@@ -1,4 +1,4 @@
-
+import javax.xml.crypto.Data;
 
 /**
  * Created by denis__larin on 06.05.17.
@@ -86,6 +86,13 @@ public class Node {
     //удаление наибольшего элемента из узла
     public DataItem delLastItem(){
         DataItem temp = itemArray[numItem-1];
+        itemArray[numItem-1] = null;
+        numItem--;
+        return temp;
+    }
+    public DataItem defFirstItem(){
+        DataItem temp = itemArray[0];
+        itemArray[0] = itemArray[numItem-1];
         itemArray[numItem-1] = null;
         numItem--;
         return temp;
